@@ -43,13 +43,14 @@ abstract class Page{
 	private function GetHead($title){
 		$output = "";
 		$output .= "<head>";
-		$output .= "<meta charset='utf-8'>";
-		$output .= "<title>$title</title>";
-		$output .= "<meta name='viewport' content='width=device-width, initial-scale=1'>";
-		$output .= "<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>";
-		$output .= "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>";
-		$output .= "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>";
-		$output .= "<link rel='stylesheet' href='./css/style.css'>";
+			$output .= "<meta charset='utf-8'>";
+			$output .= "<title>$title</title>";
+			$output .= "<meta name='viewport' content='width=device-width, initial-scale=1'>";
+			$output .= "<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>";
+			$output .= "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>";
+			$output .= "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>";
+			$output .= "<link rel='stylesheet' href='./css/style.css'>";
+			$output .= "<script src='./js/script.js'></script>";
 		$output .= "</head>";
 
 		return $output;
@@ -65,9 +66,9 @@ abstract class Page{
 				$output .= "</a>";
 				$output .= "<a href='index.php' class='w3-bar-item w3-button'><i class='fa fa-home'></i>  HOME</a>";
 				if ($this->UserIsAuthenticated()) {
-					$output .= "<a href='#contact' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-files-o'></i> MOJE DATOTEKE</a>";
-					$output .= "<a href='#contact' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-cogs'></i> MOJE POSTAVKE</a>";
-					$output .= "<a href='#contact' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-sign-out'></i> ODJAVA</a>";
+					$output .= "<a href='#contact' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-files-o'></i> MOJI KONTAKTI</a>";
+					$output .= "<a href='postavke.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-cogs'></i> MOJE POSTAVKE</a>";
+					$output .= "<a href='odjava.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-sign-out'></i> ODJAVA</a>";
 				} else {
 					$output .= "<a href='prijava.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-sign-in'></i> PRIJAVA</a>";
 					$output .= "<a href='registracija.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-user-plus'></i> REGISTRACIJA</a>";
@@ -77,12 +78,12 @@ abstract class Page{
 			$output .= "<!-- Navbar on small screens -->";
 			$output .= "<div id='navDemo' class='w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium'>";
 			if ($this->UserIsAuthenticated()) {
-				$output .= "<a href='#contact' class='w3-bar-item w3-button' onclick='toggleFunction()><i class='fa fa-files-o'></i> MOJE DATOTEKE</a>";
-				$output .= "<a href='#contact' class='w3-bar-item w3-button' onclick='toggleFunction()><i class='fa fa-cogs'></i> MOJE POSTAVKE</a>";
-				$output .= "<a href='#contact' class='w3-bar-item w3-button' onclick='toggleFunction()><i class='fa fa-sign-out'></i> ODJAVA</a>";
+				$output .= "<a href='#contact' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-files-o'></i> MOJE DATOTEKE</a>";
+				$output .= "<a href='postavke.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-cogs'></i> MOJE POSTAVKE</a>";
+				$output .= "<a href='odjava.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-sign-out'></i> ODJAVA</a>";
 			} else {
-				$output .= "<a href='prijava.php' class='w3-bar-item w3-button' onclick='toggleFunction()><i class='fa fa-sign-in'></i> PRIJAVA</a>";
-				$output .= "<a href='registracija.php' class='w3-bar-item w3-button' onclick='toggleFunction()><i class='fa fa-user-plus'></i> REGISTRACIJA</a>";
+				$output .= "<a href='prijava.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-sign-in'></i> PRIJAVA</a>";
+				$output .= "<a href='registracija.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-user-plus'></i> REGISTRACIJA</a>";
 			}
 			$output .= "</div>";
 		$output .= "</div>";
@@ -94,3 +95,5 @@ abstract class Page{
 
 	abstract protected function GetContent();
 }
+
+?>

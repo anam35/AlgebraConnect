@@ -5,30 +5,71 @@ body, html {
   line-height: 1.8;
 }
 
+label {
+	display: block;
+	text-align: left;
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+	letter-spacing: 5px;
+}
+
+input[type=text], input[type=password] {
+	display: block;
+	width: 100%;
+	margin-top: 0.25rem;
+	border-radius: 0.375rem;
+}
+
+input[type=submit] {
+	display: inline-block;
+	width: auto;
+	margin-top: 1rem;
+	border-radius: 0.375rem;
+}
+
+button {
+	display: block;
+	width: 50%;
+	margin-top: 0.25rem;
+	border-radius: 0.375rem;
+}
+
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5  {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* First image (Logo. Full height) */
+/* First image */
 .bgimg-1 {
-  background-image: url('https://www.w3schools.com/w3images/parallax1.jpg');
+  background-image: url('../images/parallax1.jpg');
   min-height: 100%;
 }
 
-/* Second image (Portfolio) */
+/* Second image */
 .bgimg-2 {
-  background-image: url("https://www.w3schools.com/w3images/parallax2.jpg");
-  min-height: 400px;
+  background-image: url("../images/parallax2.jpg");
+  min-height: 100%;
 }
 
-/* Third image (Contact) */
+/* Third image */
 .bgimg-3 {
-  background-image: url("https://www.w3schools.com/w3images/parallax3.jpg");
-  min-height: 400px;
+  background-image: url("../images/parallax3.jpg");
+  min-height: 100%;
+}
+
+/* Fourth image */
+.bgimg-4 {
+	background-image: url("../images/parallax4.jpg");
+	min-height: 100%;
+}
+
+/* Fifth image */
+.bgimg-5 {
+	background-image: url("../images/parallax5.jpg");
+	min-height: 100%;
 }
 
 .w3-wide {letter-spacing: 10px;}
