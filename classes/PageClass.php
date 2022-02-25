@@ -66,7 +66,7 @@ abstract class Page{
 				$output .= "</a>";
 				$output .= "<a href='index.php' class='w3-bar-item w3-button'><i class='fa fa-home'></i>  HOME</a>";
 				if ($this->UserIsAuthenticated()) {
-					$output .= "<a href='#contact' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-files-o'></i> MOJI KONTAKTI</a>";
+					$output .= "<a href='kontakti.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-files-o'></i> MOJI KONTAKTI</a>";
 					$output .= "<a href='postavke.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-cogs'></i> MOJE POSTAVKE</a>";
 					$output .= "<a href='odjava.php' class='w3-bar-item w3-button w3-hide-small'><i class='fa fa-sign-out'></i> ODJAVA</a>";
 				} else {
@@ -78,7 +78,7 @@ abstract class Page{
 			$output .= "<!-- Navbar on small screens -->";
 			$output .= "<div id='navDemo' class='w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium'>";
 			if ($this->UserIsAuthenticated()) {
-				$output .= "<a href='#contact' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-files-o'></i> MOJE DATOTEKE</a>";
+				$output .= "<a href='kontakti.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-files-o'></i> MOJE DATOTEKE</a>";
 				$output .= "<a href='postavke.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-cogs'></i> MOJE POSTAVKE</a>";
 				$output .= "<a href='odjava.php' class='w3-bar-item w3-button' onclick='toggleFunction()'><i class='fa fa-sign-out'></i> ODJAVA</a>";
 			} else {
