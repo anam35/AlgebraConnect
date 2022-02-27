@@ -37,7 +37,9 @@ class Prijava extends Page{
 		if($this->_authenticator->UserIsAuthentic()){
 			$this->BackToLanding();
 		}else{
-			echo "Neuspjela prijava!";
+			echo "<div class='w3-display-topmiddle' style='white-space:nowrap; color:red; padding-top:12rem; z-index: 1;'>";
+				echo "<strong>Neuspjela prijava!</strong>";
+			echo "</div>";
 		}
 	}
 	
@@ -47,6 +49,6 @@ class Prijava extends Page{
 }
 
 $site = new Prijava();
-$site->Display('AlgebraConnect - Prijava');
+$site->Display("AlgebraConnect - Prijava");
 
 ?>

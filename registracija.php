@@ -32,7 +32,9 @@ class Registracija extends Page{
 		}
 		
 		if($_POST["p1"] !== $_POST["p2"]){
-			echo "Zaporke se moraju poklapati!";
+			echo "<div class='w3-display-topmiddle' style='white-space:nowrap; color:red; padding-top:12rem; z-index: 1;'>";
+				echo "<strong>Zaporke se moraju poklapati!</strong>";
+			echo "</div>";
 			return;
 		}
 		
@@ -52,6 +54,6 @@ class Registracija extends Page{
 }
 
 $site = new Registracija();
-$site->Display('AlgebraConnect - Registracija');
+$site->Display("AlgebraConnect - Registracija");
 
 ?>

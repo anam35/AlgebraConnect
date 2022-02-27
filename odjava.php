@@ -14,6 +14,6 @@ class Odjava extends Page{
 }
 
 $site = new Odjava();
-$site->Display('AlgebraConnect - Logout');
+$site->Display("AlgebraConnect - Logout");
 
 ?>

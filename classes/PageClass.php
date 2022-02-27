@@ -36,6 +36,10 @@ abstract class Page{
 		header("Location: index.php");
 	}
 
+	public function BackToContacts(){
+		header("Location: kontakti.php");
+	}
+
 	private function UserIsAuthenticated(){
 		return $this->_authenticator->UserIsAuthentic();
 	}

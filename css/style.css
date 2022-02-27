@@ -20,9 +20,10 @@ input[type=text], input[type=password] {
 	border-radius: 0.375rem;
 }
 
-input[type=submit] {
+input[type=submit], input[type=button] {
 	display: inline-block;
 	width: auto;
+	min-width: 150px;;
 	margin-top: 1rem;
 	border-radius: 0.375rem;
 }
@@ -35,7 +36,7 @@ button {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5  {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg6, .bgimg7 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,12 +73,28 @@ button {
 	min-height: 100%;
 }
 
+/* Sixth image */
+.bgimg-6 {
+	background-image: url("../images/parallax6.jpg");
+	min-height: 100%;
+}
+
+/* Seventh image */
+.bgimg-7 {
+	background-image: url("../images/parallax7.jpg");
+	min-height: 100%;
+}
+
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
+.w3-table-all tr:nth-child(2n) {background-color: #3f3f3f;}
+.w3-table-all tr:nth-child(2n+1) {background-color: #000 !important;}
+.w3-table-all thead tr {border-bottom: double;}
+.w3-table-all tfoot tr:nth-child(2n+1) {border-top: double;}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg6, .bgimg7 {
     background-attachment: scroll;
     min-height: 400px;
   }

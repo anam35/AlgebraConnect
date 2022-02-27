@@ -25,8 +25,6 @@ class Index extends Page{
 }
 
 $site = new Index();
-$site->Display('AlgebraConnect - Index');
+$site->Display("AlgebraConnect - Index");
 
 ?>
-
-<!--https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_parallax&stacked=h-->

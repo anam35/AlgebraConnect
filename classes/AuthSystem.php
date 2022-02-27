@@ -24,6 +24,9 @@ class AuthSystem{
 		if(!$this->DataTablesExists()){
 			$this->CreateTables();
 		}
+		if(!$this->DataTablesExists1()){
+			$this->CreateTables1();
+		}
 	}
 	
 	private function DataTablesExists(){
@@ -57,6 +60,39 @@ class AuthSystem{
 		}
 	}
 	
+	private function DataTablesExists1(){
+		try{
+			if(!$this->databaseConnection->query("select 1 from contacts")){
+				return false;
+			}else{
+				return true;
+			}
+		}catch (PDOException $e){
+			return false;
+		}
+	}
+	
+	private function CreateTables1(){
+		$query = "";
+		
+		$query .= "CREATE TABLE contacts";
+		$query .= "(";
+		$query .= "id INT NOT NULL AUTO_INCREMENT,";
+		$query .= "ownerId INT NOT NULL,";
+		$query .= "name VARCHAR(255) NOT NULL,";
+		$query .= "number VARCHAR(20) NOT NULL,";
+		$query .= "PRIMARY KEY (id),";
+		$query .= "FOREIGN KEY (ownerId) REFERENCES users(id)";
+		$query .= ");";
+		
+		$this->databaseConnection->exec($query);
+		
+		if(!$this->DataTablesExists()){
+			var_dump($this->databaseConnection->errorInfo());
+			throw new Exception("Error while creating database!");
+		}
+	}
+
 	public function CreateUser($username, $password){
 		$hash = $this->create_hash($password);
 		
@@ -136,13 +172,28 @@ class AuthSystem{
 			throw new Exception("Error while updating user password!");
 		}
 	}
+
+	public function CreateNewContact($id, $newConName, $newConNumber){
+		$query = "";
+		
+		$query .= "INSERT INTO contacts";
+		$query .= "(ownerId, name, number)";
+		$query .= "VALUES";
+		$query .= "(:id, :name, :number);";
+		
+		$stmt = $this->databaseConnection->prepare($query);
+		
+		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+		$stmt->bindParam(':name', $newConName, PDO::PARAM_STR, 255);
+		$stmt->bindParam(':number', $newConNumber, PDO::PARAM_STR, 20);
+
+		if(!$stmt->execute()){
+			throw new Exception("Error while creating contact!");
+		}
+	}
 	
 	public function GetCurrentUserId(){
 		return $_SESSION["userId"];
-	}
-	
-	public function GetCurrentUserName(){
-		return $_SESSION["username"];
 	}
 	
 	///////////////////password hashing methods/////////////////
@@ -224,3 +275,5 @@ class AuthSystem{
 	}
 	///////////////////password hashing methods/////////////////
 }
+
+?>
